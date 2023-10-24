@@ -19,28 +19,35 @@
   </head>
 
   <body>
-    <header id="top">
-      <div class="navbar">
-        <a href="#top">
-          Bookshelf
-        </a>
-        <nav class="nav-active">
-          <ul>
-            <li><a href="assets/pages/cari.html">Cari</a></li>
-            <li><a href="assets/pages/arsip.html">Arsip</a></li>
-          </ul>
-        </nav>
-        <button type="button" class="hamburger-button hamburger-active">
-          <span class="hamburger-line"></span>
-          <span class="x-wrapper">
-            <span class="x-line"></span>
-            <span class="x-line"></span>
-          </span>
-          <span class="hamburger-line"></span>
-        </button>
-      </div>
-    </header>
-    <h1>Bookshelf</h1>
+    <div class="container">
+      <header id="top">
+        <div class="navbar">
+          <a href="#top"><h1>Bookshelf</h1></a>
+          <nav class="nav-active">
+            <ul>
+              <li><button id="btn-dashboard">Dasboard</button></li>
+              <li><button id="btn-all-books">All Books</button></li>
+            </ul>
+          </nav>
+          <button type="button" class="hamburger-button hamburger-active">
+            <span class="hamburger-line"></span>
+            <span class="x-wrapper">
+              <span class="x-line"></span>
+              <span class="x-line"></span>
+            </span>
+            <span class="hamburger-line"></span>
+          </button>
+        </div>
+      </header>
+      <main>
+        <section id="dashboard">
+          <h2>Dasbor</h2>
+        </section>
+        <section id="all-books">
+          <h2>Semua Buku</h2>
+        </section>
+      </main>
+    </div>
     <script type="module" src="assets/js/main.js"></script>
   </body>
 </html>
