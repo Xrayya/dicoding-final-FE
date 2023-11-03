@@ -10,3 +10,30 @@ note : the content in this project is written in Bahasa<br>
 - Move book between table
 - Delete books
 - Persistent data (local storage)
+
+## Personal Notes
+### Book Data
+```
+{
+  id: string | number,
+  title: string,
+  author: string,
+  year: number,
+  isComplete: boolean,
+}
+```
+
+Improvisation
+```
+{
+  id: string | number,
+  title: string,
+  author: string,
+  + publisher: string,
+  + category: string[],
+  + page: number,
+  + language: string,
+  year: number,
+  isComplete: boolean,
+}
+```
