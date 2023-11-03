@@ -22,7 +22,9 @@
     <div class="container">
       <header id="top">
         <div class="navbar">
-          <a href="#top"><h1>Bookshelf</h1></a>
+          <a href="#top">
+            <h1>Bookshelf</h1>
+          </a>
           <nav class="nav-active">
             <ul>
               <li><button id="btn-dashboard">Dasboard</button></li>
@@ -40,11 +42,42 @@
         </div>
       </header>
       <main>
-        <section id="dashboard">
-          <h2>Dasbor</h2>
+        <section id="dashboard"  class="page page-inactive">
+          <div class="section-head">
+            <h2 class="section-title">Dasbor</h2>
+            <!-- search -->
+            <!-- advanced-search -->
+          </div>
+          <div class="statistic"></div>
+          <div class="book-lists-wrapper">
+            <div class="unfinished-books"></div>
+            <div class="finished-books"></div>
+          </div>
         </section>
-        <section id="all-books">
-          <h2>Semua Buku</h2>
+        <section id="all-books" class="page">
+          <div class="section-head">
+            <h2 class="section-title">Semua Buku</h2>
+            <!-- search -->
+            <!-- advanced-search -->
+          </div>
+          <div class="tabs">
+            <button>Unfinished Books</button>
+            <button>Finished Books</button>
+            <button>All Books</button>
+          </div>
+          <table>
+              <tr>
+                <th>No</th>
+                <th>Timestamp</th>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Publisher</th>
+                <th>Categories</th>
+                <th>Page</th>
+                <th>Language</th>
+                <th>Year of Publish</th>
+              </tr>
+          </table>
         </section>
       </main>
     </div>
