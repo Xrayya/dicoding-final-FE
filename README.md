@@ -10,6 +10,9 @@ note : the content in this project is written in Bahasa<br>
 - Move book between table
 - Delete books
 - Persistent data (local storage)
+- Statistic
+  - All books count
+  - Unfinished book percentage
 
 ## Personal Notes
 ### Book Data
@@ -37,3 +40,5 @@ Improvisation
   isComplete: boolean,
 }
 ```
+## Last Progress
+brainstorming statistic

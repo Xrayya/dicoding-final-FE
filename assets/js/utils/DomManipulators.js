@@ -3,13 +3,29 @@ const findPageSection = (sectionId) => {
 };
 
 const closeAllPageSection = () => {
-  document.querySelector("section.page").classList.add("inactive");
+  document.querySelectorAll("section.page").forEach((page) => {
+    page.classList.add("page-inactive");
+  });
 };
 
 const activatePageSection = (sectionId) => {
   document
     .querySelector(`section.page#${sectionId}`)
-    .classList.remove("inactive");
+    .classList.remove("page-inactive");
 };
 
-export { findPageSection, closeAllPageSection, activatePageSection };
+const attachEventListener = (selector, eventType, callback) => {
+  document.querySelectorAll(selector).forEach((item) => {
+    item.addEventListener(eventType, () => {
+      // console.log(`${eventType} event is triggered on "${selector}"`);
+      callback(item);
+    });
+  });
+};
+
+export {
+  findPageSection,
+  closeAllPageSection,
+  activatePageSection,
+  attachEventListener,
+};
