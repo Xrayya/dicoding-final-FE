@@ -93,46 +93,55 @@ class BookBuilder {
   /** @param {Date} timestamp */
   timestamp(timestamp) {
     this.#timestamp = timestamp;
+    return this;
   }
 
   /** @param {string} title */
   title(title) {
     this.#title = title;
+    return this;
   }
 
   /** @param {string} author */
   author(author) {
     this.#author = author;
+    return this;
   }
 
   /** @param {number} year */
   year(year) {
     this.#year = year;
+    return this;
   }
 
   /** @param {boolean} complete */
   complete(complete) {
     this.#complete = complete;
+    return this;
   }
 
   /** @param {string} publisher */
   publisher(publisher) {
     this.#publisher = publisher;
+    return this;
   }
 
   /** @param {string[]} categories */
   categories(categories) {
     this.#categories = categories;
+    return this;
   }
 
   /** @param {number} page */
   page(page) {
     this.#page = page;
+    return this;
   }
 
   /** @param {string} language */
   language(language) {
     this.#language = language;
+    return this;
   }
 
   /** @returns {Book} */
