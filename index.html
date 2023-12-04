@@ -58,7 +58,7 @@
           </div>
           <div class="statistic"></div>
           <div class="book-lists-wrapper">
-            <div class="unfinished-books">
+            <div id="unfinished-books">
               <table>
                 <tr>
                   <th>No</th>
@@ -73,7 +73,7 @@
                 </tr>
               </table>
             </div>
-            <div class="finished-books">
+            <div id="finished-books">
               <table>
                 <tr>
                   <th>No</th>
@@ -85,6 +85,22 @@
                   <th>Page</th>
                   <th>Language</th>
                   <th>Year of Publish</th>
+                </tr>
+              </table>
+            </div>
+            <div id="latest-added-books">
+              <table>
+                <tr>
+                  <th>No</th>
+                  <th>Timestamp</th>
+                  <th>Title</th>
+                  <th>Author</th>
+                  <th>Publisher</th>
+                  <th>Categories</th>
+                  <th>Page</th>
+                  <th>Language</th>
+                  <th>Year of Publish</th>
+                  <th class="completed-column">Completed</th>
                 </tr>
               </table>
             </div>
@@ -97,9 +113,18 @@
             <!-- advanced-search -->
           </div>
           <div class="tabs">
-            <button class="btn-books-category active" id="btn-books-category-unfinished">Unfinished Books</button>
-            <button class="btn-books-category" id="btn-books-category-finished">Finished Books</button>
-            <button class="btn-books-category" id="btn-books-category-all">All Books</button>
+            <button
+              class="btn-books-category active"
+              id="btn-books-category-unfinished"
+            >
+              Unfinished Books
+            </button>
+            <button class="btn-books-category" id="btn-books-category-finished">
+              Finished Books
+            </button>
+            <button class="btn-books-category" id="btn-books-category-all">
+              All Books
+            </button>
           </div>
           <table>
             <tr>
