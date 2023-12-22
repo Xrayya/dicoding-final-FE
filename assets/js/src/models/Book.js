@@ -25,7 +25,7 @@ class Book {
     title,
     author,
     year,
-    complete,
+    complete = false,
     publisher,
     categories,
     page,
@@ -80,15 +80,15 @@ class Book {
 }
 
 class BookBuilder {
-  #timestamp;
-  #title;
-  #author;
-  #year;
-  #complete;
-  #publisher;
-  #categories;
-  #page;
-  #language;
+  /** @type {Date | undefined} */ #timestamp;
+  /** @type {string | undefined} */ #title;
+  /** @type {string | undefined} */ #author;
+  /** @type {number | undefined} */ #year;
+  /** @type {boolean | undefined} */ #complete;
+  /** @type {string | undefined} */ #publisher;
+  /** @type {string[] | undefined} */ #categories;
+  /** @type {number | undefined} */ #page;
+  /** @type {string | undefined} */ #language;
 
   /** @param {Date} timestamp */
   timestamp(timestamp) {
@@ -144,18 +144,25 @@ class BookBuilder {
     return this;
   }
 
-  /** @returns {Book} */
+  /** @returns {Book | void} */
   build() {
-    return new Book(
-      this.#timestamp,
-      this.#title,
-      this.#author,
-      this.#year,
-      this.#complete,
-      this.#publisher,
-      this.#categories,
-      this.#page,
-      this.#language,
-    );
+    if (
+      this.#timestamp !== undefined &&
+      this.#title !== undefined &&
+      this.#author !== undefined &&
+      this.#year !== undefined
+    ) {
+      return new Book(
+        this.#timestamp,
+        this.#title,
+        this.#author,
+        this.#year,
+        this.#complete,
+        this.#publisher,
+        this.#categories,
+        this.#page,
+        this.#language,
+      );
+    }
   }
 }

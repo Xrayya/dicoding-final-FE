@@ -2,12 +2,12 @@ import { attachEventListener } from "../utils/DomManipulators.js";
 
 class Sidebar {
   /**
-   * @callback cb
+   * @callback NoParamsCallback
    */
 
   /**
    * @param {string} id 
-   * @param {cb} callback 
+   * @param {NoParamsCallback} callback 
   */
   static bindElementOnClick(id, callback) {
     attachEventListener(`nav button.btn-page#${id}`, "click", callback);

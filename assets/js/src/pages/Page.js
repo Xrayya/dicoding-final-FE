@@ -5,17 +5,13 @@ import {
 } from "../utils/DomManipulators.js";
 
 class Page {
-  /**
-   * @param {string} sectionId
-   */
+  /** @param {string} sectionId */
   constructor(sectionId) {
     this.sectionId = sectionId;
     this.sectionDOM = findPageSection(this.sectionId);
   }
 
-  /**
-   * @returns {void}
-   */
+  /** @returns {void} */
   displayPage() {
     closeAllPageSection();
     activatePageSection(this.sectionId);

@@ -1,6 +1,15 @@
 /**
+ * @callback NoParamsCallback
+ */
+
+/**
+ * @callback addEventListenerCallback
+ * @param {Element} item
+ */
+
+/**
  * @param {string} sectionId
- * @returns {HTMLElement}
+ * @returns {HTMLElement | null}
  */
 const findPageSection = (sectionId) => {
   return document.querySelector(`section.page#${sectionId}`);
@@ -20,15 +29,29 @@ const closeAllPageSection = () => {
  * @returns {void}
  */
 const activatePageSection = (sectionId) => {
-  document
-    .querySelector(`section.page#${sectionId}`)
-    .classList.remove("page-inactive");
+  document.querySelector(`section.page#${sectionId}`)?.classList.remove("page-inactive");
 };
 
 /**
- * @callback cb
+ * @returns {void}
+ */
+const deactivateAllBookCategoryTabs = () => {
+  document.querySelectorAll("tabs > button.btn-books-category").forEach((tab) => {
+    tab.classList.remove("active");
+  });
+};
+
+/**
+ * @param {string} tabId
+ * @returns {void}
+ */
+const activateBookCategoryTab = (tabId) => {
+  document.querySelector(`tabs > button.btn-books-category#${tabId}`)?.classList.add("active");
+};
+
+/**
  * @param {string} selector
- * @param {cb} callback
+ * @param {addEventListenerCallback} callback
  * @param {string} eventType
  * @returns {void}
  */
@@ -45,5 +68,7 @@ export {
   findPageSection,
   closeAllPageSection,
   activatePageSection,
+  deactivateAllBookCategoryTabs,
+  activateBookCategoryTab,
   attachEventListener,
 };
