@@ -22,6 +22,10 @@ const closeAllPageSection = () => {
   document.querySelectorAll("section.page").forEach((page) => {
     page.classList.add("page-inactive");
   });
+
+  document.querySelectorAll("button.btn-page").forEach((button) => {
+    button.classList.remove("active");
+  });
 };
 
 /**
@@ -29,7 +33,13 @@ const closeAllPageSection = () => {
  * @returns {void}
  */
 const activatePageSection = (sectionId) => {
-  document.querySelector(`section.page#${sectionId}`)?.classList.remove("page-inactive");
+  document
+    .querySelector(`section.page#${sectionId}`)
+    ?.classList.remove("page-inactive");
+
+  document
+    .querySelector(`button.btn-page#btn-page-${sectionId}`)
+    ?.classList.add("active");
 };
 
 /**

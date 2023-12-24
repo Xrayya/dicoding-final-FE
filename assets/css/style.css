@@ -84,6 +84,10 @@ td {
   border-radius: calc((1.5rem + 2 * 8px) / 2);
 }
 
+.btn-page.active {
+  font-weight: bold;
+}
+
 .tabs > button {
   padding: 4px 12px;
   border-radius: calc((1.5rem + 2 * 4px) / 2);
