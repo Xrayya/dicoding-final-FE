@@ -88,6 +88,7 @@ td {
   padding: 4px 12px;
   border-radius: calc((1.5rem + 2 * 4px) / 2);
   color: white;
+  transition: 500ms ease-out;
 }
 
 .tabs > button.active {

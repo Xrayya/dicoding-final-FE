@@ -1,4 +1,6 @@
 class Book {
+  /** @typedef {("No" | "Timestamp" | "Title" | "Author" | "Publisher" | "Categories" | "Page" | "Language" | "Year of Publish")} columnName */
+
   #timestamp;
   #title;
   #author;

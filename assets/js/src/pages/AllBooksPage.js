@@ -12,7 +12,7 @@ class AllBooksPage extends Page {
   setupTabs() {
     attachEventListener("tabs > button.btn-books-category", "click", (button) => {
       if (button.classList.contains("active")) {
-        
+
       }
     })
   }

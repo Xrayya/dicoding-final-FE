@@ -36,9 +36,11 @@ const activatePageSection = (sectionId) => {
  * @returns {void}
  */
 const deactivateAllBookCategoryTabs = () => {
-  document.querySelectorAll("tabs > button.btn-books-category").forEach((tab) => {
-    tab.classList.remove("active");
-  });
+  document
+    .querySelectorAll(".tabs > button.btn-books-category")
+    .forEach((tab) => {
+      tab.classList.remove("active");
+    });
 };
 
 /**
@@ -46,7 +48,9 @@ const deactivateAllBookCategoryTabs = () => {
  * @returns {void}
  */
 const activateBookCategoryTab = (tabId) => {
-  document.querySelector(`tabs > button.btn-books-category#${tabId}`)?.classList.add("active");
+  document
+    .querySelector(`.tabs > button.btn-books-category#${tabId}`)
+    ?.classList.add("active");
 };
 
 /**
@@ -64,6 +68,14 @@ const attachEventListener = (selector, eventType, callback) => {
   });
 };
 
+/**
+ * @param {string} tableid
+ * @returns {HTMLElement | null}
+ */
+const findTableById = (tableid) => {
+  return document.querySelector(`table#${tableid}`);
+};
+
 export {
   findPageSection,
   closeAllPageSection,
@@ -71,4 +83,5 @@ export {
   deactivateAllBookCategoryTabs,
   activateBookCategoryTab,
   attachEventListener,
+  findTableById,
 };
