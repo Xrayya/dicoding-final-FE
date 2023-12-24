@@ -142,6 +142,82 @@
           </table>
         </section>
       </main>
+      <div class="add-book-pop-up">
+        <div class="pop-up-container">
+          <h3>Add New Book</h3>
+          <hr />
+          <form>
+            <div class="input-group">
+              <label for="input-title"
+                >Titles<span class="important">*</span></label
+              >
+              <input id="input-title" type="text" name="title" required />
+            </div>
+            <div class="input-group">
+              <label for="input-author"
+                >Author<span class="important">*</span></label
+              >
+              <input id="input-author" type="text" name="author" required />
+            </div>
+            <div class="input-group">
+              <label for="input-publisher"
+                >Publisher<span class="important">*</span></label
+              >
+              <input
+                id="input-publisher"
+                type="text"
+                name="publisher"
+                required
+              />
+            </div>
+            <div class="input-group">
+              <label for="input-categories">Categories</label>
+              <input id="input-categories" type="text" name="categories" />
+            </div>
+            <div class="input-group">
+              <label for="input-page">Page</label>
+              <input id="input-page" type="number" name="page" />
+            </div>
+            <div class="input-group">
+              <label for="input-language">Language</label>
+              <input id="input-language" type="text" name="language" />
+            </div>
+            <div class="input-group">
+              <label for="input-year"
+                >Year of Publish<span class="important">*</span></label
+              >
+              <input id="input-year" type="number" name="year" required />
+            </div>
+            <div class="input-group">
+              <label>Completed<span class="important">*</span></label>
+              <div class="input-completed-radio-wrapper">
+                <input
+                  id="input-completed"
+                  type="radio"
+                  name="completed"
+                  value="true"
+                  required
+                />
+                <label for="input-completed">Yes</label>
+              </div>
+              <div class="input-completed-radio-wrapper">
+                <input
+                  id="input-incompleted"
+                  type="radio"
+                  name="completed"
+                  value="false"
+                  required
+                />
+                <label for="input-incompleted">No</label>
+              </div>
+            </div>
+            <div class="input-group">
+              <input type="submit" name="submit" value="Submit" />
+            </div>
+          </form>
+          <button class="btn-pop-up-close">×</button>
+        </div>
+      </div>
     </div>
     <script type="module" src="assets/js/src/main.js"></script>
   </body>

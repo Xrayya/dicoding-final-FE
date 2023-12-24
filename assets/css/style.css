@@ -2,6 +2,8 @@
   --primaryColor: #64748b;
   --primaryBg: #cbd5e1;
   --secondaryBg: #94a3b8;
+  --popupBg: #e2e8f0;
+  --important: #b91c1c;
 }
 
 * {
@@ -88,14 +90,95 @@ td {
   font-weight: bold;
 }
 
-.tabs > button {
+.tabs>button {
   padding: 4px 12px;
   border-radius: calc((1.5rem + 2 * 4px) / 2);
   color: white;
   transition: 500ms ease-out;
 }
 
-.tabs > button.active {
+.tabs>button.active {
   background-color: var(--primaryColor);
   font-weight: bold;
+}
+
+.add-book-pop-up {
+  /* display: none; */
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  min-width: 160px;
+  width: 50%;
+  height: fit-content;
+  background-color: var(--popupBg);
+  border-radius: 8px;
+}
+
+.add-book-pop-up.active {
+  display: block;
+}
+
+.pop-up-container {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.pop-up-container>h3 {
+  text-align: center;
+}
+
+.pop-up-container>form {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group>label {
+  font-weight: bold;
+}
+
+.input-group>label>.important {
+  color: var(--important);
+}
+
+.input-group>input {
+  height: fit-content;
+  padding: 2px 8px;
+  border-radius: calc((1.5rem + 8px) / 2);
+  border: 2px solid var(--primaryBg);
+}
+
+.input-group>input:focus {
+  outline: none !important;
+  border: 2px solid var(--primaryColor);
+}
+
+.input-group>input[type="submit"] {
+  background-color: var(--primaryColor);
+  border: 2px solid var(--primaryColor);
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn-pop-up-close {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  font-size: 3rem;
+  color: var(--secondaryBg);
+}
+
+.btn-pop-up-close:hover {
+  color: var(--primaryColor);
 }
