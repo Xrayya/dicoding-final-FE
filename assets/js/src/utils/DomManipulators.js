@@ -72,7 +72,6 @@ const activateBookCategoryTab = (tabId) => {
 const attachEventListener = (selector, eventType, callback) => {
   document.querySelectorAll(selector).forEach((item) => {
     item.addEventListener(eventType, () => {
-      // console.log(`${eventType} event is triggered on "${selector}"`);
       callback(item);
     });
   });
@@ -86,6 +85,19 @@ const findTableById = (tableid) => {
   return document.querySelector(`table#${tableid}`);
 };
 
+/**
+ * @param {string} inputElementSelector
+ * @returns {string}
+ */
+const getValueOfInput = (inputElementSelector) => {
+  const inputElement = document.querySelector(inputElementSelector);
+  if (inputElement instanceof HTMLInputElement) {
+    return inputElement.value;
+  }
+
+  return "";
+};
+
 export {
   findPageSection,
   closeAllPageSection,
@@ -94,4 +106,5 @@ export {
   activateBookCategoryTab,
   attachEventListener,
   findTableById,
+  getValueOfInput,
 };

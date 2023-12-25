@@ -76,6 +76,14 @@ td {
   padding: 4px;
 }
 
+.btn-add-book {
+  padding: 2px 8px;
+  background-color: var(--primaryColor);
+  color: white;
+  border-radius: calc((1.5rem + 8px) / 2);
+  border: 2px solid var(--primaryColor);
+}
+
 .tabs {
   width: fit-content;
   margin: 4px 0px;
@@ -103,7 +111,7 @@ td {
 }
 
 .add-book-pop-up {
-  /* display: none; */
+  display: none;
   position: fixed;
   left: 0;
   right: 0;

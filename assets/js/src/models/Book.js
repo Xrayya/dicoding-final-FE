@@ -1,15 +1,14 @@
 class Book {
-  /** @typedef {("No" | "Timestamp" | "Title" | "Author" | "Publisher" | "Categories" | "Page" | "Language" | "Year of Publish")} columnName */
 
-  #timestamp;
-  #title;
-  #author;
-  #year;
-  #complete;
-  #publisher;
-  #categories;
-  #page;
-  #language;
+  timestamp;
+  title;
+  author;
+  year;
+  complete;
+  publisher;
+  categories;
+  page;
+  language;
 
   /**
    * @param {Date} timestamp
@@ -33,51 +32,15 @@ class Book {
     page,
     language,
   ) {
-    this.#timestamp = timestamp;
-    this.#title = title;
-    this.#author = author;
-    this.#year = year;
-    this.#complete = complete;
-    this.#publisher = publisher;
-    this.#categories = categories;
-    this.#page = page;
-    this.#language = language;
-  }
-
-  getTimestamp() {
-    return this.#timestamp;
-  }
-
-  getTitle() {
-    return this.#title;
-  }
-
-  getAuthor() {
-    return this.#author;
-  }
-
-  getYear() {
-    return this.#year;
-  }
-
-  isComplete() {
-    return this.#complete;
-  }
-
-  getPublisher() {
-    return this.#publisher;
-  }
-
-  getCategories() {
-    return this.#categories;
-  }
-
-  getPage() {
-    return this.#page;
-  }
-
-  getLanguage() {
-    return this.#language;
+    this.timestamp = timestamp;
+    this.title = title;
+    this.author = author;
+    this.year = year;
+    this.complete = complete;
+    this.publisher = publisher;
+    this.categories = categories;
+    this.page = page;
+    this.language = language;
   }
 }
 
@@ -146,7 +109,7 @@ class BookBuilder {
     return this;
   }
 
-  /** @returns {Book | void} */
+  /** @returns {Book | null} */
   build() {
     if (
       this.#timestamp !== undefined &&
@@ -166,5 +129,12 @@ class BookBuilder {
         this.#language,
       );
     }
+
+    return null;
   }
+}
+
+export default Book
+export {
+  BookBuilder
 }

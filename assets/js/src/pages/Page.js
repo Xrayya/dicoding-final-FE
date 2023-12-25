@@ -1,3 +1,4 @@
+import AddBookPopUp from "../components/AddBookPopUp.js";
 import {
   activatePageSection,
   closeAllPageSection,
@@ -9,6 +10,8 @@ class Page {
   constructor(sectionId) {
     this.sectionId = sectionId;
     this.sectionDOM = findPageSection(this.sectionId);
+    const addBookPopUp = new AddBookPopUp();
+    addBookPopUp.listenOnSubmit()
   }
 
   /** @returns {void} */

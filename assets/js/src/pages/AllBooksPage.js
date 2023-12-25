@@ -1,4 +1,9 @@
-import { attachEventListener } from "../utils/DomManipulators.js";
+import BookCategoryTabController from "../components/BookCategoryTabController.js";
+import {
+  activateBookCategoryTab,
+  attachEventListener,
+  deactivateAllBookCategoryTabs,
+} from "../utils/DomManipulators.js";
 import Page from "./Page.js";
 
 /**
@@ -7,14 +12,22 @@ import Page from "./Page.js";
 class AllBooksPage extends Page {
   constructor() {
     super("all-books");
+    this.setupTabs();
   }
 
   setupTabs() {
-    attachEventListener("tabs > button.btn-books-category", "click", (button) => {
-      if (button.classList.contains("active")) {
+    const tabController = new BookCategoryTabController();
+    
+    tabController.setTabId("btn-books-category-unfinished");
+    tabController.displayBookList();
 
-      }
-    })
+    attachEventListener(".tabs > button.btn-books-category", "click", (tab) => {
+      tabController.setTabId(tab.id);
+      tabController.displayBookList();
+
+      deactivateAllBookCategoryTabs();
+      activateBookCategoryTab(tab.id);
+    });
   }
 }
 

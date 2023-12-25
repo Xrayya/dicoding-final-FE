@@ -33,7 +33,7 @@ Improvisation
   title: string,
   author: string,
   + publisher: string,
-  + category: string[],
+  + categories: string[],
   + page: number,
   + language: string,
   year: number,

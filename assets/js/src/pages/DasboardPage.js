@@ -1,9 +1,4 @@
-import BookCategoryTabController from "../components/BookCategoryTabController.js";
-import {
-  activateBookCategoryTab,
-  attachEventListener,
-  deactivateAllBookCategoryTabs,
-} from "../utils/DomManipulators.js";
+import BookTabelController from "../components/TableController.js";
 import Page from "./Page.js";
 
 /**
@@ -12,18 +7,36 @@ import Page from "./Page.js";
 class DashboardPage extends Page {
   constructor() {
     super("dashboard");
-    this.setupTabs()
+    this.#setupTables();
   }
 
-  setupTabs() {
-    const tabController = new BookCategoryTabController();
-    attachEventListener(".tabs > button.btn-books-category", "click", (tab) => {
-      tabController.setTabId(tab.id);
-      tabController.displayBookList();
+  #setupTables() {
+    const finishedTableController = new BookTabelController(
+      "dashboard-finished-tabel",
+    );
+    finishedTableController.setBookTypes(["finished"]);
+    finishedTableController.maximumLine(10);
+    finishedTableController.excludeColumn("Completed");
+    finishedTableController.dispatchData();
+    finishedTableController.listenChangeStatus();
 
-      deactivateAllBookCategoryTabs();
-      activateBookCategoryTab(tab.id);
-    });
+    const unfinishedTableController = new BookTabelController(
+      "dashboard-unfinished-tabel",
+    );
+    unfinishedTableController.setBookTypes(["unfinished"]);
+    unfinishedTableController.maximumLine(10);
+    unfinishedTableController.excludeColumn("Completed");
+    unfinishedTableController.dispatchData();
+    unfinishedTableController.listenChangeStatus();
+
+    const latestTableController = new BookTabelController(
+      "dashboard-latest-tabel",
+    );
+    latestTableController.setBookTypes(["unfinished", "finished"]);
+    latestTableController.maximumLine(10);
+    latestTableController.excludeColumn("Completed");
+    latestTableController.dispatchData();
+    latestTableController.listenChangeStatus();
   }
 }
 

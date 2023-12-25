@@ -1,8 +1,4 @@
-import {
-  activateBookCategoryTab,
-  deactivateAllBookCategoryTabs,
-} from "../utils/DomManipulators.js";
-import BookTableController from "./TableController.js";
+import BookTabelController from "./TableController.js";
 
 class BookCategoryTabController {
   /** @type {string} */ #tabId;
@@ -20,9 +16,7 @@ class BookCategoryTabController {
    * @returns {void}
    */
   displayBookList() {
-    deactivateAllBookCategoryTabs();
-    activateBookCategoryTab(this.#tabId);
-    const tableController = new BookTableController("all-books-table");
+    const tableController = new BookTabelController("all-books-tabel");
     switch (this.#tabId) {
       case "btn-books-category-unfinished":
         tableController.setBookTypes(["unfinished"]);
@@ -32,10 +26,12 @@ class BookCategoryTabController {
         break;
       case "btn-books-category-all":
         tableController.setBookTypes(["finished", "unfinished"]);
+        break;
       default:
         tableController.setBookTypes([]);
     }
     tableController.dispatchData();
+    tableController.listenChangeStatus();
   }
 }
 
