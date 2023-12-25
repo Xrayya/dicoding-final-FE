@@ -65,4 +65,15 @@ const moveBook = (index, originType, destinationType) => {
   localStorage.setItem(`${destinationType}-books`, JSON.stringify(bookData));
 };
 
-export { getBooks, addBook, moveBook };
+/**
+ * @param {number} index
+ * @param {BookType} bookType
+ */
+const deleteBook = (index, bookType) => {
+  const bookData = getBooks([bookType]);
+  bookData.splice(index, 1);
+
+  localStorage.setItem(`${bookType}-books`, JSON.stringify(bookData));
+};
+
+export { getBooks, addBook, moveBook, deleteBook };

@@ -2,7 +2,11 @@ import {
   attachEventListener,
   findTableById,
 } from "../utils/DomManipulators.js";
-import { getBooks, moveBook } from "../utils/LocalStorageAccessor.js";
+import {
+  deleteBook,
+  getBooks,
+  moveBook,
+} from "../utils/LocalStorageAccessor.js";
 
 class BookTabelController {
   /** @typedef {("No" | "Timestamp" | "Title" | "Author" | "Publisher" | "Categories" | "Page" | "Language" | "Year of Publish" | "Completed")} columnName
@@ -121,6 +125,8 @@ class BookTabelController {
             htmlText += `<input type="button" class="btn-completion" name="${index}" value="Set ${book.complete ? "No" : "Yes"
               }" origin="${book.complete ? "finished" : "unfinished"
               }" destination="${book.complete ? "unfinished" : "finished"}" />`;
+            htmlText += `<input type="button" class="btn-delete" name="${index}" value="Delete" bookType="${book.complete ? "finished" : "unfinished"
+              }" />`;
 
             tdElement.innerHTML = htmlText;
         }
@@ -172,6 +178,24 @@ class BookTabelController {
           }
 
           moveBook(parseInt(button.name), origin, destination);
+          document.dispatchEvent(new Event("bookDataChange"));
+        }
+        event.stopImmediatePropagation();
+      });
+    });
+
+    document.querySelectorAll("table .btn-delete").forEach((button) => {
+      button.addEventListener("click", (event) => {
+        if (button instanceof HTMLInputElement) {
+          /** @type {BookType} */
+          let bookType;
+          if (button.getAttribute("bookType") == "finished") {
+            bookType = "finished";
+          } else {
+            bookType = "unfinished";
+          }
+
+          deleteBook(parseInt(button.name), bookType);
           document.dispatchEvent(new Event("bookDataChange"));
         }
         event.stopImmediatePropagation();
